@@ -1,4 +1,10 @@
-# js-joda + Webpack tree shaking issue example
+# js-joda + Webpack/Rollup tree shaking issue example
+
+## Usage
+
+`npm i && npm run build`
+
+See the built files in `dist/webpack` and `dist/rollup`.
 
 ## License
 

@@ -1,26 +1,36 @@
 {
   "name": "js-joda-tree-shake",
   "version": "1.0.0",
-  "description": "js-joda + Webpack tree shaking issue example",
+  "description": "js-joda + Webpack/Rollup tree shaking issue example",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "build:prod": "NODE_ENV=production webpack",
-    "build:debug": "DEBUG_BUILD=true NODE_ENV=production webpack"
+    "build": "npm run clean && npm run build:webpack && npm run build:rollup && ls -lah ./dist/*/",
+    "build:rollup": "rollup -c",
+    "build:webpack": "webpack",
+    "clean": "rm -rf ./dist/"
   },
   "keywords": [
-    "webpack",
+    "js-joda",
+    "rollup",
     "tree-shaking",
-    "js-joda"
+    "webpack"
   ],
   "author": "Slava Fomin II <slava@fomin.io> (https://slava.fomin.io)",
   "license": "MIT",
   "sideEffects": false,
+  "private": true,
   "dependencies": {
     "js-joda": "^1.11.0"
   },
   "devDependencies": {
-    "clean-webpack-plugin": "^3.0.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "rollup": "^1.27.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-uglify": "^6.0.3",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-stats-plugin": "^0.3.0"
