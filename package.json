@@ -20,7 +20,7 @@
   "sideEffects": false,
   "private": true,
   "dependencies": {
-    "js-joda": "^1.11.0"
+    "@js-joda/core": "^1.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
